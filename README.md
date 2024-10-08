@@ -30,3 +30,11 @@ Avant de commencer, assurez-vous d'avoir les logiciels suivants installés sur v
    npm i
    node server.js
    ```
+
+   3. ##Connection a la DB :##
+  
+   path:
+   ```
+   C:\Users\matti\SkillTracker\server\skilltracker.db
+   ```
+   
