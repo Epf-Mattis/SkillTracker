@@ -13,8 +13,8 @@ Avant de commencer, assurez-vous d'avoir les logiciels suivants installés sur v
 1. **Cloner le dépôt :**
 
    ```bash
-   git clone https://github.com/Epf-Mattis/SoftChallengeWeb.git
-   cd softchallenge
+   https://github.com/Epf-Mattis/SkillTracker.git
+   cd SkillTracker
 
 
 2. **Lancer L'application :**
