@@ -1,24 +1,25 @@
 const db = require('../config/db');
 
-// Créer un utilisateur
-const createUser = (username, email, password, callback) => {
-  const sql = `INSERT INTO users (username, email, password) VALUES (?, ?, ?)`;
-  db.run(sql, [username, email, password], function (err) {
-    if (err) {
-      return callback(err);
-    }
-    callback(null, { id: this.lastID });
-  });
-};
 
-// Récupérer un utilisateur par email
+const createUser = (username, email, password, profileImage, callback) => {
+    const query = `INSERT INTO users (username, email, password, image) VALUES (?, ?, ?, ?)`;
+    db.run(query, [username, email, password, profileImage], function (err) {
+      if (err) {
+        return callback(err);
+      }
+      callback(null, { id: this.lastID });
+    });
+  };
+  
+
+
 const getUserByEmail = (email, callback) => {
-  const sql = `SELECT * FROM users WHERE email = ?`;
-  db.get(sql, [email], (err, row) => {
+  const query = `SELECT * FROM users WHERE email = ?`;
+  db.get(query, [email], (err, user) => {
     if (err) {
       return callback(err);
     }
-    callback(null, row);
+    callback(null, user);
   });
 };
 
