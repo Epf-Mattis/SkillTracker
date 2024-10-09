@@ -11,14 +11,20 @@ const db = new sqlite3.Database('./skilltracker.db', (err) => {
 
 function createTables() {
   // Table des utilisateurs
+
+  db.run(`
+    ALTER TABLE users
+    ADD COLUMN image TEXT;
+  `);
   db.run(`
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       username TEXT NOT NULL,
       email TEXT NOT NULL UNIQUE,
-      password TEXT NOT NULL
+      password TEXT NOT NULL,
+      image TEXT  -- Ajout de la colonne pour l'image de profil
     );
-  `);
+`);
 
   // Table des compétences
   db.run(`
