@@ -1,6 +1,6 @@
 const skillModel = require('../models/skillModel');
 
-// Créer une compétence
+
 const createSkill = (req, res) => {
   const { user_id, skill_name } = req.body;
   skillModel.createSkill(user_id, skill_name, (err, result) => {
@@ -11,7 +11,7 @@ const createSkill = (req, res) => {
   });
 };
 
-// Récupérer toutes les compétences d'un utilisateur
+
 const getSkillsByUser = (req, res) => {
   const { user_id } = req.params;
   skillModel.getSkillsByUser(user_id, (err, skills) => {
